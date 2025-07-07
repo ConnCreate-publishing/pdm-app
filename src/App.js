@@ -3,7 +3,6 @@ import { initializeApp } from 'firebase/app';
 import { 
     getAuth, 
     onAuthStateChanged, 
-    signInAnonymously,
     signInWithEmailAndPassword,
     signOut
 } from 'firebase/auth';
@@ -19,8 +18,6 @@ import {
     setDoc,
     getDocs,
     writeBatch,
-    query,
-    orderBy
 } from 'firebase/firestore';
 import { 
     getStorage, 
@@ -524,7 +521,7 @@ const PropertyForm = ({ property, onSave, onClose, onDelete, onArchive, isSaving
         if(!isStaging || (property && (!formData || property.id !== formData.id))) {
            setActiveTab("Core Info"); 
         }
-    }, [property, isStaging]);
+    }, [property, isStaging, formData]);
 
     const handleFormChange = useCallback((e) => {
         const { name, value } = e.target;
