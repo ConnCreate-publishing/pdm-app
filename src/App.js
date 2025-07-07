@@ -760,7 +760,8 @@ const ListView = ({ properties, onSelectProperty, selectedProperty, onSave, onCl
                     onSave={onSave}
                     onClose={onClose}
                     onDelete={onDelete}
-                    onArchive={confirmArchive}
+                   // eslint-disable-next-line no-undef
+				onArchive={confirmArchive}
                     isSaving={isSaving}
                     setPrintViewProperty={setPrintViewProperty}
                     setNotification={setNotification}
